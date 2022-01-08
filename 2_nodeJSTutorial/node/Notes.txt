@@ -65,7 +65,7 @@ Ans : Asynchronously means : -> when some lower sequence code is being executed 
 then suddenly the callback that was registered earlier gets executed
 means non synchronously OR non sequence way 
 
-* What is package.json file ?
+* What is package.json file ? { use npm init command to create package.json file }
 Ans : It is the file that contains metadata of our project , or it is a manifest file . 
 it follows JSON format . and it also helpful if someone else tries to install our project 
 or if we have deleted some node modules , then if we simply we npm install then it again

@@ -1,0 +1,76 @@
+# Java Scipt is a language that can add interactivity [ability to interact to user's input & change content accordingly] to your website .  
+# Core JS has been used to build Useful WEB API's [ Those applicationas that provide you access to main features using web as mediator for example , any websbite using your webcam , will be doing it so by help of an API , that contact's your device & that website.]
+For using google maps in any website , developers need to use specific API's built by google to get access , they don't directly interfere with google's database , but ITS LIKE NOW THOSE WEBSITES BECOME GOOGLE'S CUSTOMER IN BEHALF OF US FOR SPECIFIC TIME & TASK .
+
+# Embedding JS using <script> tag :
+- Must add this tag before closing tag of </body> in index.html .
+- <script src= "folderName/entryPoint.js" ></script> . [ entryPoint.js is the file that acts as driver file for all the JS code in your website , all other modules are imported into this file .]
+- It acts as same as <link> tag for CSS 
+
+QUES : Why placing script tag in last of body ?
+Ans : This is because loading scripts can take some time , so if you place the scripts in front head then it would lead to bad user Experience .
+Also to prevent this , the script tag is placed below the complete body content , or just above the </body> tag .
+That's Why you might have seen in many websites that during slow internet connection , you see only basic html websites with 
+no decoration or JS applied . They look like they were create in straight HTML only . But when fast internet is back or after a long time , the website begins to look beautiful , like JS has been applied , 
+This is because of the reason that scripts are "still loading" & hasn't been implemented yet , as they are at last of the body tag so 
+Basic HTML loads easily while beautification takes time , in slow Internet Connection . 
+But this method has its own problems , that say for larger websites , the scripts download cannot start , till whole HTML is loaded 
+that makes User Experience bad . To solve this problem we need to have something like : the scripts must be downloaded at same time when docs are being parsed 
+Hence to do this we use async / non-blocking script tag . <script src="index.js" async></script>.
+With this 'async' added to the tag it starts download with document being parsed , and as it starts download , hence it also starts to execute , 
+As a result you now see how slow your website may be , but you see the Beautified version only . 
+This does takes faster Internet Connection.
+
+IMP: Also afte this async script tag , now you can write this tag even in <head> tag of html .
+
+
+# Once in your script modules you use document.querySelector('tag') from then the html has lost control over that , now it only displaying it , and controlled by script 
+Example you control h1 tag then whatever u write in HTML in this tag will not be rendered , bu those which are added by JS .
+This is possible because of DOM [Document Object Model] . 
+
+QUES : What is DOM ?
+Ans :- DOM is an API that divides , the document into multiple objects , now using those objects , we can manipulate the main Document using Javascript
+It is the DOM only due to which we are able to contact to the main displaying document . DOM works as an interface between HTML Doc & Javascript . 
+
+
+# A semicolon in the end of a statement is just to differ it from other statement written in the same line . else it's just a beauty factor in JS .
+
+
+QUES : What is the difference between 'let' & 'var' ?
+Ans :- 
+
+QUES : Who reads the code before execution in JS then what is difference between compiled & intrepreted languages ? [see let.js]
+Ans :- Don't know who reads the code completely before executign it . But it is also not same as compiled time languages 
+because as you see in let.js the top console log runs and after that it gives error unlike in compiled time languages . 
+So it is like someone reads the code , understands it , that there will be a syntax error , but still it runs to the point till where it is correct.
+
+So unlike compiled languages , where the code completely converted to other type language [byte code] , here in this the code is only read once completely .
+
+
+# document.querySelector() & alert('anyMessage') are built into browser functions . which means that they are global functions and are window objects in JS
+window is simply he window or tab of browser . if you write window.close() after some code then after executing that code the window would automatically close .
+DOM is also window object . 
+
+# Attribute in HTML Tags : like in img tag we have 'src','onclick' etc . these all are called as attributes of any html tag & they can be changed with JS 
+document.querySelector('').setAttribute('nameOfAttribute', value of the attribute);
+
+# On which port does your index.html file runs ?
+Ans : file:///G:/MERN%20TUTORIAL/javaScriptTutorial/index.html - this is not any port & this was in the link bar of the browser whiel running the index.html file .
+
+# What is localStorage or sessionsStorage in JS ?
+Ans : https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API
+
+
+# What is an object prototype in JS ?
+Ans : Prototype is a object-property present inside every object , which contains extra added things to the object and those extra things will now be easily accessible 
+to all the instances of that object . Basically in depth what happens is parent't prototype is as it is copied to child object's prototype 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain 
+Modification of Standard defined objects is also possible.
+
+
+# How promises , async , await are non-blocking ? despite they do things one by one ?
+Ans : In the promises you keep those codes which will block the event loop , till their execution gets completed 
+by keepin gthose codes inside promises & then using async await instead of .then , will simply put that blocking code out of 
+event loop & carry on its operation sidewise , when it gets ready to be executed [ready to print result] , then the callback function
+gets called . And in that time when the blocking code inside promise was running , other code has run , hence , preventing the block.
+

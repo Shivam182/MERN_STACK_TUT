@@ -1,0 +1,106 @@
+# BASICS OF NODE JS 
+
+* What is Node JS ?
+Ans : NodeJs is an 'Open Source' , 'Cross-Platform' , JavaScript Runtime . Just like JRE for Java .
+Just like JRE contains JVM & other built in classes , same NodeJs contains V8 engine for executing 
+JS and node modules as built in Classes . NodeJS libraries are also built in form of non-blocking paradigm ,
+NodeJS works on non-blocking paradigm despite being a single-threaded framework .
+
+* What is V8 Engine ?
+Ans : It is an C++ written JS executor , This is the same engine that is used to power Google Chrome browser . 
+
+* How V8 is implemented to work in Chrome Browser ?
+Ans : The main job of V8 engine is to execute the source code of the website to give you a visual representation of how that 
+source code looks in form of a website . So the V8 executes JS of websites to make you see what that actually looks
+also it runs JS with running websites , and it executes the scripts when you click on a button , its V8 that makes all possible 
+to interact with a website , make requests , get content etc . 
+
+* What is JIT that V8 engine uses ? WHy it does not uses AOT like Java ?
+Ans : JIT , compiles the code directly into machine code without into converting to a byte OR Intermediate Code 
+So unlike AOT first u will have JS high level language ----> byte code ----> runs.
+In JIT its like , JS -----> JIT(Compiled to Machine Code)----> Keeps running that code which has been compiled 
+That's why you can see while runnign JS , errors & console logs come in same execution , means if error arises late then 
+also the runnable code will present its result , if that runnable code was present ahead in the order of error contaning code 
+That's JIT , it keeps compiling & running . 
+
+* How websites were built before NodeJS ?
+Ans : They used simple HTML / CSS for frontend . 
+Then for backend they used different language . 
+For providing functionality to websites they used JavaScripts , because you cannot have functions in HTML , 
+HTML does not creates dynamic pages . Its JS that does the dynamic thing .
+
+* What is a dynamic page ?
+Ans : Those pages which can listen to user interaction , like user presses a button , and web page does something in the same page 
+means page contents change with user's interaction . JS can do this thing not HTML , it will directly take you to a new HTML page only 
+
+* How websites built after NodeJs & why is it better ?
+Ans : While making a website in NodeJs we do not use directly the HTML . just nowhere, but we use HTML page and modify it indirectly 
+using the DOM , every tag of the HTML is an Object for React , then we make changes using react , then it makes it HTML compatible 
+and then renders it , also the JS makes the page dynamic , and also for backend we have frameworks which run on NodeJS only & language
+also is JS , so everything is now combined , to run on NodeJS & JS . 
+
+Also Node provides accessging to multiple usable API's or built in libraries , that makes things and interaction with user more 
+easier , So now your websites are not only dead pieces of information , but they have come alive , they know to interact with the user
+, They are dynamic not constant . 
+
+* What is single threaded & non-blocking thing ?
+Ans : That means NodeJs does not creates multiple threads for different or new functional requests .
+While blocking code means when the JS code is doing I/O operation , or computer file accessing [ this generally happens  in frontend]
+This leads to stopping of JS execution , also now the user's CPU is performing . So it wastes time . Also think like any hard core animation 
+is loading on the website which is now blocking the loading of every other element on the website , that leads to huge UX loss.
+This was a problem of single-threaded languages 
+
+* Why Multithreading wasn't used for nodeJs execution paradigm ?
+Ans : Because Multi threaded execution requires more physical resources , like CPU Memory , and can become slow 
+for large user base , because everyone will be given a new stack program . and every request will have new thread 
+
+* How blocking problem was solved ?
+Ans : Using Async system of execution , means that those programs that will be requiring time to get solved , 
+those will be offloaded and executed at a side away from main thread . And only executing those time taking
+functions when they are ready to be executed . We use special callback functions that get called asynchronously
+when the blocking code is ready to be executed .
+
+* What is Asynchronously ?
+Ans : Asynchronously means : -> when some lower sequence code is being executed , 
+then suddenly the callback that was registered earlier gets executed
+means non synchronously OR non sequence way 
+
+* What is package.json file ?
+Ans : It is the file that contains metadata of our project , or it is a manifest file . 
+it follows JSON format . and it also helpful if someone else tries to install our project 
+or if we have deleted some node modules , then if we simply we npm install then it again
+installs all the dependencies that we were using with same version.
+
+* What is package-lock.json ?
+Ans : if you open this project's package.lock.json file then you will find that it contains description of
+many and many packages , it contains an indepth info , so what makes npm install really successful on other 
+devices is this file . package.json does contains node packages with indepth versioning , which would tell us exact 
+in depth version of them , but there are still many packages that we use , and them we do not install using npm , 
+they are installed already , and thus all of those packages that are present in node modules , all of them's indepth 
+version is given by package-lock.json file .
+
+* Event Loops & setImmediate , process.nextTick() -->
+
+Event loop is a call stack , that keeps executing executable functions on the stack , and keeps removing them 
+one by one , every time a request is executed & then it is removed from the call stack it is called , one interaction
+of the event loop . OR one 'TICK' . Also as we know node manages async programming for executing JS . So whenever it 
+see any time taking operation like settimeout , or any other callback operated thing , then it sends it to a callback
+queue , OR task queue , OR offload from main execution thread , OR its an offload from the Event loop's call stack . Note that they 
+implement queue data structure , and the other one is call stack , and implements stack data strucutre 
+Now all these callbacks in task queue , are executed , and as soon as their time comes , say like , a settimeout has been 
+set for 2 seconds , so after 2 seconds in task queue , now its callback function will be automatically sent to 
+next iteration of event loop . and it will get executed in time . So now in that 2 seconds when settimeout was waiting
+we executed huge amount of code , 'that must be nothing to do with that settimeout' .
+
+* How process.nextTick() works ?
+Ans : its like at the next iteration of event loop this callback will be executed , and then removed 
+so the next iteration or next tick belongs to this callback. In case we have 2 or more ticks in order , then 
+the one who gets into the queue first will come out of queue first , as it is called task 'Queue' .
+
+* How does setImmediate works ?
+Ans : this method's callback runs in the current iteration's next iteration . for sure . 
+but always after nextTick method .
+
+
+* How many requests handled in one iteration of event loop ?
+Ans : As many as possible , which just ready to be executed , and do not block the thread .

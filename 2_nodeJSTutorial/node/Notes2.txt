@@ -1,0 +1,33 @@
+# RUNNING & EXITING NODE JS APPLICATION 
+
+
+* How do you run NodeJS scripts from command line ?
+Ans : Running NodeJS scripts , means running JS in Node Runtime Environment . 
+So Steps are simple :-  
+1. Just open cmd where you JS file is present 
+2. Then write node FileName . Press Enter  {its's your choice you write extension with fileName or not , but it must be JS file}
+3. Done . 
+
+* How to exit a NodeJS program ?
+Ans : To terminate any running nodeJS execution just write Ctrl+C in th cmd where node is running , the process gets terminated
+examples running any website on any port , and the website is still in between and running , if you write CTRl+C in that 
+terminal , then process will end instantly . There is also a programatic method for this . 
+You can write process.exit() , anywhere in your code when compiler reaches there , the program automatically gets terminated 
+you can also make exit function to return an integer 'only' that will be written on the console once program exits 
+like process.exit(1) ----> writes 1 at end . 
+by default it is 0 .  
+
+* What is Repl ?
+Ans :- Repl -> Read Evaluate Print Loop.
+node command is used to run Repl . remember to run node comman only without any args in front of it , 
+just write node , hit enter . It starts the Repl , it can be started anywhere , and acts just like the console of 
+chrome browser , where you can write JS , and get results to see . 
+
+To terminate Repl , just like any other node process termination , do Ctrl +C or 
+write process.exit() in the Repl itself . But here it will not return any integer even if you specify . 
+because in this case Repl was the process . which got exited leaving no other place to display the exit code .
+
+- If You press the up arrow key you will get the history of previous lines of codes executed 
+just like in cmd of windows . 
+
+

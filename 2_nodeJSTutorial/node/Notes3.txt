@@ -1,0 +1,58 @@
+# GLOBALLY AVAILABLE OBJECTS AND METHODS IN NodeJS
+
+1. Process => 
+
+This is a globally available object in nodeJS , and can be accessed in any module, 
+Simply write process.methodName() & you accessed process object.
+
+But what is process actually ? Is it a module or what ?
+Ans : Yes process is a module whose object is globally available according to node docs.
+
+2. Env [Environment Variables] =>
+
+The process core module of NodeJs , provides the env property . 
+means env is a property in process object .
+
+What is this env property ?
+Ans :  It has all the environment variables which were set during any process was started . 
+env variables are like { if i write USER_NAME , anywhere in my program then what it should mean :
+ it will mean whatever i had assigned to it in the env file , and i will access it like  , process.env.USER_NAME }
+
+env thing is very useful when when you have some secret keys and passwords to access an API in behalf of user in your code 
+then instead of directly writing the key everywhere , simply put it in a .env file and make the file invisibe . 
+
+As we know .env are available globally , using process module , so we need not to import that .env file everywhere 
+we just have to require('dotenv') module in in JS file where we want to use env variables set . 
+But still why using dotenv , can't we get it directly like we get its parent that is process & its methods 
+
+Ans : We need to use dotenv because , that makes the file secret and all its keys also 
+
+
+3. There are also many global methods : setTimeout , setInterval , etc . which can be accessed directly without any module 
+even without using any object .
+
+4. Command line arguments using process.argv --> returns an array of cmd arguments given via command line by user 
+You can provide cmd line arguments like this :-
+node app.js joe name=shivam
+
+now in the array process.argv[0] = 'joe'
+process.argv[1] = 'name=shivam'
+
+Remember that we can do this while using node only not any other Runtime for JS
+
+
+5. Console => 
+It is the most used global module , with its method as console.log().
+It prints any string provided to it , and if any object is passed to it , it will render it as a string .
+there are also many methods like .clear() , .count() . 
+
+
+
+
+
+
+
+
+
+
+

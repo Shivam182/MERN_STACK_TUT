@@ -1,0 +1,9 @@
+* Must install mongoose using npm install mongoose to work with MongoDB
+* mongoose is a library that works on NodeJS to make database interaction & creation things possible from website to MongoDb server
+* mongoDb database must also be  installed in your device . 
+* open cmd anywhere , & write mongo , hit enter & your mongoDB shell awakens .
+* it will give you data about your local host connection URL for DB .
+* now come to code and do connection to database using the URL above from shell .
+* Now after successful connection , wherever you import / require the database file which has connection to MongoDb using mongoose
+This DB gets awakens , and let say you imported in it an express file then both of them will work together 
+You just need to use nodemon to run your that express file . 

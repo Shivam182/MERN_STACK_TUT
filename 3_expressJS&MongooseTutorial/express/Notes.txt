@@ -1,2 +1,13 @@
 * What is Routing ?
-Ans : 
+Ans : Routing means how an applications endpoints respond to URIs . 
+* What are these application endpoints ?
+Ans : Application endpoints are , like frontend , database . Also the get method is bound to frontend .
+
+* What is MiddleWare in ExpressJs ? 
+Ans : its the callback that is called in any express app method , after the route is specified , 
+this middleware has access to req,res, next objects and thus help us get , post , put , delete data of any 
+specific route. 
+
+* What is app.use() method ?
+Ans : Allows us to use any specific callback for a specified route , if no route is specified 
+then that callback will be executed for every route . in that module . 

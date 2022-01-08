@@ -6,4 +6,4 @@
 * now come to code and do connection to database using the URL above from shell .
 * Now after successful connection , wherever you import / require the database file which has connection to MongoDb using mongoose
 This DB gets awakens , and let say you imported in it an express file then both of them will work together 
-You just need to use nodemon to run your that express file . 
+You just need to use nodemon to run your that express file.

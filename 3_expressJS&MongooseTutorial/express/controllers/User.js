@@ -11,7 +11,6 @@ const router = require("express").Router();
 
 const { check, validationResult } = require("express-validator");
 const User = require("../../mongoose/models/User");
-const { route } = require("../3_Router");
 
 // MiddleWare Setup : They will run for every route
 router.use(bodyParser.json());
@@ -19,6 +18,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 
 // routes for user access . we used all method just for testing
 // this gets invoked for /api/user/ only --------
+// whom does this fxn returns this res.json ? ans : them who calls it , the url , not any fxn inside the code .
 router.all("/", (req, res) => {
   return res.json({
     status: true,
@@ -55,6 +55,7 @@ router.post(
     const hahsedPassword = bcrypt.hashSync(req.body.password, 8);
 
     // inserting to DB
+    // how this req gets this all data from where ? Ans : we gave this data to our HTTP URL , it was taken from there , as these req & res are connected to HTTP request & response methods
     var temp = new User({
       userName: req.body.userName,
       eMail: req.body.eMail,
@@ -82,6 +83,7 @@ router.post(
 );
 
 // Reading Database using any key
+// difference between req.body & req.params ??? Ans : Read Notes
 router.get("/find/:eMail", (req, res) => {
   User.find({ eMail: req.params.eMail }, (anyErr, result) => {
     if (anyErr) {
@@ -145,10 +147,15 @@ module.exports = router;
  * 
  * 1. What is validation ? 
  * Ans : While using a website , you write any length password , then you are warned that password must be 5 length must contain this & that
-         this also happens for many other fields , So what it does is , saving bogus CPU Processing. This is Validation
-         This is not Authentication which involves weather this user exists or not , if exists then give him control
-         That is called a different level of Validation more higher level . But that's not we are talking here . 
-         Why we are not using same validator for authentication things ? Yes it can be surely used : https://auth0.com/blog/express-validator-tutorial/
+    this also happens for many other fields , So what it does is , saving bogus CPU Processing. This is Validation
+    This is not Authentication which involves weather this user exists or not , if exists then give him control
+    That is called a different level of Validation more higher level . But that's not we are talking here . 
+    Why we are not using same validator for authentication things ? Yes it can be surely used : https://auth0.com/blog/express-validator-tutorial/
  * 
- * 2. 
+ * 2. What is difference between req.body & req.params ?
+ * Ans : req is the request object , req.body has the data that is given to any url by the user like 
+ * when a user sends form data via submit button , then the button calls this post method and data as a JSON
+ * string is transferred to post method --> url(req) --> database .
+ * While req.params is referring to params in the URL , remember using /:anyParam in url building , here 'anyParam'
+ * goes to req.params property .  
  */

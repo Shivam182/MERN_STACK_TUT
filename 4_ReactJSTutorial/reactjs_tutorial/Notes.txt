@@ -42,3 +42,6 @@ Ans : DOM Tree is the collection of DOM objects , Each node of the tree has diff
 In order to show any component to your website at any point of time , you need to export it , then add it to 
 main entry point of the app directly or indirectly [through other parent component] , this is called adding a 
 component to the DOM Tree . 
+
+* Do we need to use .bind() with some methods ?
+Ans : 

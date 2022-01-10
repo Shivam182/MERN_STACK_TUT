@@ -4,8 +4,8 @@ import HelloWorld from "./1_HelloWorld";
 class LifeCycle_Methods extends React.Component {
   // What is super ? why it won't work without super()  ?
   // Ans: we call super() inside constructor , to call parent class's constructor . In this case it is React.Component
-  // It is mainly useful in those cases when we want to inherit some methods or data from our parent class . 
-  // In this case we did it , as we have access to many methods provided by React.Component class in React 
+  // It is mainly useful in those cases when we want to inherit some methods or data from our parent class .
+  // In this case we did it , as we have access to many methods provided by React.Component class in React.
   constructor() {
     super();
     this.state = {
@@ -24,15 +24,12 @@ class LifeCycle_Methods extends React.Component {
     console.log("from update method ");
   }
 
-  
-
   render() {
     return (
       <div>
         <h1>Hello my name is {this.state.name}</h1>
       </div>
     );
-
   }
 
   componentWillUnmount() {

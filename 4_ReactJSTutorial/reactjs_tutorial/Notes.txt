@@ -1,0 +1,38 @@
+* What is React ? 
+Ans : According to official website , React is a JS library that facilitates , 'painless'  creation of websites 
+which can change data on the website ' without page reloading ' . 
+
+* How React is 'painless' ?
+Ans : As we know React is a Front-End library , Before reactjs we had to make different .html pages , 
+Then css files to be integrated on every page , and then javaScript files , also they were very slow , as in order to 
+change any content , those pages had to reload everything from start . React also makes things very concise 
+Also all above listed problems are solved in react . 
+
+* How React Changes data on a page without Reloading it ?
+Ans : React uses DOM model to change contents , OR When react renders anything to a webpage , every element 
+in that page is a DOM object , for example , any box that has some data , or any piece of welcome greeting , 
+all of them are considered as different DOM elements , So when we do change to any specfic kind of data representation , 
+OR any specific DOM elements , Then only that changes . Hence no need to reload the complete page or go to other page 
+to show different content . As all other elements remain same and only few elements are changed so this also takes place
+very very fast compared to complete page reloading .
+
+
+* What is a React Component ? What does it do ? And what are props ?
+Ans : A react component is a DOM object , which can be displayed in the web page , that acquires its own , space , 
+and has it own functionality . Yes it is same like that DOM objects which react use to make of every HTML tag . 
+Where every tag was a separate DOM obejct . Here also every component is a separate DOM object . 
+- props : So as in normal HTML tags we have attributes , in a component we have props . that can be given values ,just 
+like we give in HTML tag's attributes [ just by writing by the user at implementation time ]
+
+Practical application : https://codepen.io/pen?&editors=0010
+
+* What does it mean by document.getElementById('root') ?
+Ans : This method is usually present inside React's render method , and also above this , there is given any component
+or complete family of nested components & styling . This simply means that render ----> the whole web component ----> in the element named as root 
+
+
+* What is manifest.json ?
+Ans : This is a file that contains info about your web app . Then what's the difference with package.json 
+package.json stores info about packges used in the project in orer to help others or future you , to re-instantiate 
+the project and do any modifications . While the manifest.json contains only upper level data , and allows the user 
+of your web-app to create homeScreen shortcuts , to have faster access .

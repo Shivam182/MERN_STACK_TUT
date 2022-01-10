@@ -36,3 +36,9 @@ Ans : This is a file that contains info about your web app . Then what's the dif
 package.json stores info about packges used in the project in orer to help others or future you , to re-instantiate 
 the project and do any modifications . While the manifest.json contains only upper level data , and allows the user 
 of your web-app to create homeScreen shortcuts , to have faster access .
+
+* What is DOM Tree ?
+Ans : DOM Tree is the collection of DOM objects , Each node of the tree has different component representation . 
+In order to show any component to your website at any point of time , you need to export it , then add it to 
+main entry point of the app directly or indirectly [through other parent component] , this is called adding a 
+component to the DOM Tree . 

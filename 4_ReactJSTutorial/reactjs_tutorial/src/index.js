@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import HelloWorld from './HelloWorld';
+import HelloWorld from './1_HelloWorld';
+import LifeCycle_Methods from './2_LifecycleMethods';
+
 
 
 ReactDOM.render(
 
   <React.StrictMode>
-    <HelloWorld/>
+    {/* <HelloWorld/> */}
+    <LifeCycle_Methods/>
   </React.StrictMode>,
   document.getElementById('root')
 );

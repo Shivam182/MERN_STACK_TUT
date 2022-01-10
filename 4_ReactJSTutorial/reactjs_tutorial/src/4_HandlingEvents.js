@@ -35,4 +35,5 @@ export default Foo;
  * Now if we try to click button , then nothing happens , Why is it so that it does not gets called ? It behaves like 
  * a normal function call that we do in simple code , like we make a fxn , then beneath it we call it , it becomes like 
  * that . Why onClick() lost its importance now ????????????????????????????
+ * Note : In order to see effect , remove 'e' from arguments of event handler for now . 
  */

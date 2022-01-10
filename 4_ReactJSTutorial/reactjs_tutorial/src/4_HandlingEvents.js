@@ -29,4 +29,10 @@ export default Foo;
  * if you console log e.target.value ---> it will show the current value that has been informed to the element on which 
  * this event handler has been attached . As a result in order to change states in textBox elements , we use e.target.value 
  * which simply gives us the new value in that element . and thus we change our state . 
+ * 
+ * 2. Why is it that , if we write this.handleClick ----> this.handleClikc() , then we go to console , we already see 
+ * log without even clicking the button ? How does the event handler gets called without clicking the button ? Also 
+ * Now if we try to click button , then nothing happens , Why is it so that it does not gets called ? It behaves like 
+ * a normal function call that we do in simple code , like we make a fxn , then beneath it we call it , it becomes like 
+ * that . Why onClick() lost its importance now ????????????????????????????
  */

@@ -6,8 +6,6 @@ const mySchema = mongoose.Schema({
     name:String,
     timestamp:String,
 })
-// const newModel = mongoose.model('myModel',mySchema)
-module.exports = mongoose.model('myModel',mySchema)
-// export default mongoose.model('myModel',mySchema)
+module.exports = mongoose.model('mymodels',mySchema)
 
 // pass : GFWk4ZhjLLeHRVgc

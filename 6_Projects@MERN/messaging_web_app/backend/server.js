@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 // import Messages from './dbMessages'
 const Messages = require("./dbMessages");
+const cors = require("cors");
 
 const Pusher = require("pusher");
 
@@ -19,12 +20,7 @@ const pusher = new Pusher({
 
 // middleware
 app.use(express.json());
-
-app.use((req,res,next)=>{
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Header","*");
-    next(); 
-})
+app.use(cors());
 
 // DB config
 const connectionURL =
@@ -51,6 +47,8 @@ db.once("open", () => {
       pusher.trigger("messages", "inserted", {
         name: messageDetails.name,
         message: messageDetails.message,
+        timestamp: messageDetails.timestamp,
+        received: messageDetails.received,
       });
     } else {
       console.log("Error trigirring Pusher ..!  ");
@@ -59,11 +57,8 @@ db.once("open", () => {
 });
 
 // api routes
-app.get("/", (req, res) => {
-  res.status(200).send("Hello World !!");
-});
 
-app.get("messages/sync", (req, res) => {
+app.get("/messages/sync", (req, res) => {
   Messages.find((err, data) => {
     if (err) {
       res.status(500).send(err);

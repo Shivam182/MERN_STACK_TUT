@@ -9,8 +9,8 @@ function SidebarChat() {
         <div className='sidebarChat'>
             <Avatar/>
             <div className="info">
-                <h2>Room Name</h2>
-                <p>This is the last message</p>
+                <h2>Any Person</h2>
+                <p>Hey !</p>
             </div>
         </div>
     )

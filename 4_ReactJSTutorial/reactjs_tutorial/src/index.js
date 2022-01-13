@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import HelloWorld from './1_HelloWorld';
 import LifeCycle_Methods from './2_LifecycleMethods';
 import Element from './3_Props';
-import Foo from './4_HandlingEvents';
+import Foo from './5_BindEventHandlers';
+// import Foo from './4_HandlingEvents';
 
 
 

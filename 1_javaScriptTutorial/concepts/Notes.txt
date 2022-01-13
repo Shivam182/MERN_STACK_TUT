@@ -15,6 +15,8 @@ That's why it is said that 'this' keyword is closely related to javaScript funct
 When a piece of code gets executed , a list of variables , functions etc. gets added to this Record 
 This Phenomena is Known as Binding in JS . 
 
+`this` works different for different cases , read in link given at top . 
+
 Thus Binding helps associate functions , variables with this keyword wich further refers to any particular execution context
 
 * Trace What happens in this.handleClick = this.handleClick.bind(this) ? Why we need to do binding for event handlers ?

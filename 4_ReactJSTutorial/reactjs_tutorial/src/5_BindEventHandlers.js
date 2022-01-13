@@ -1,5 +1,8 @@
 import React from "react";
 
+// IMP : Does `this` works differently in React ? because it comes into play without invoking a execution function ? 
+
+
 class Foo extends React.Component {
   constructor(props) {
     super(props);

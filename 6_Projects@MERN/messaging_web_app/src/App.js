@@ -49,8 +49,5 @@ export default App;
 /**
  * Notes :-
  * 
- * 1. What are hooks ? Why we use them ?
- * 2. What is useEffect hook ? 
- * 3. What is useState hook ?
- * 4. 
+ * 
  */

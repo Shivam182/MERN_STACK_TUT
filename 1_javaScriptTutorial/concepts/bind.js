@@ -7,8 +7,9 @@
 // WAYS OF BINDING
 
 let getName = function () {
+   
   console.log(this.name);
-  console.log(this.extra)
+
 };
 
 let user = {

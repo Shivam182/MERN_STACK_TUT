@@ -1,0 +1,38 @@
+MUST READ : https://www.freecodecamp.org/news/javascript-this-keyword-binding-rules/
+
+* What is `this` ? [ The Biggest question in JavaScript ] 
+Ans : To Understand `this` in JS we need to understand multiple things stepwise :-
+1. Lexical Environment :
+This is the region where a piece of code in written inside that code module . 
+It is basically that's function , class where any piece of code is written . 
+
+2. Execution Context:
+It mainly refers to the part of code that is currently running 
+That's why it is said that 'this' keyword is closely related to javaScript functions .{ Because we don't know what is 'this' until a function is invoked }, So this keyword is related to a execution context . 
+'this' after a function is invoked actually tells us about that what is inside a execution context . 
+
+3. Environment Record : What is Binding In JS ?
+When a piece of code gets executed , a list of variables , functions etc. gets added to this Record 
+This Phenomena is Known as Binding in JS . 
+
+Thus Binding helps associate functions , variables with this keyword wich further refers to any particular execution context
+
+* Trace What happens in this.handleClick = this.handleClick.bind(this) ? Why we need to do binding for event handlers ?
+Ans : https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/
+
+* What if we log this ?
+Ans : If we log a global this , means that logging this of a function that is independently called without using an object 
+then in that log we see that there are multiple functions like setImmediate , clearImmediate , queueTask , And from 
+this I remember that these all things are used to manipulate the Event Loop in NodeJS . 
+
+
+* Why sometimes logged `this` comes undefined , while sometimes has a value in it ?
+
+
+* Does every function has it's own `this` ?
+ANs : No, Every execution context has it own 'this' . actually every function which gets executed is part of that execution context's this
+in which the function is executed . 
+
+* Why & how `this` is related to JS functions very much ?
+Ans : Just because to execute a code in JS , we need functions , so till a function is not executed , anywhere 
+the `this` does not comes into play , as we know `this` represents execution context's data , if no execution --> no `this`

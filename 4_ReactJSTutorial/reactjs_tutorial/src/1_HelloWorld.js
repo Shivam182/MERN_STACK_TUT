@@ -39,7 +39,7 @@ export default HelloWorld;
 /**
  * Notes :-
  * 1. What is React Element ?
- * Ans : They are typically created via JSX. For example
+ * Ans : They are the smallest building blocks of any Component, they are typically created via JSX. For example
  * <div/> , <AnyComponent/> are React elements , they are
  * converted into HTML equivalent somehow by the render method possibly
  * which renders DOM elements .

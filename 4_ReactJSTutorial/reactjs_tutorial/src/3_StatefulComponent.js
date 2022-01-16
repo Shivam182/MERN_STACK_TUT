@@ -60,12 +60,14 @@ export default Timer;
  * But it is necessary to call all those children components inside the main name-space component , So basically namespace
  * acts like a High-order component . I don't Know they are same as nameSpace ?
  *
- * 2. What is this.state actually in a Component ?
+ * 3. What is this.state actually in a Component ?
  * Ans : Basically its a javaScript Object which becomes sub-property of any React.Component Object , 
  * which is predefined , with its methods like setState where you modify any
  * subproperty inside state property . You can also make something like it , but as its not inbuilt 
  * it's change will not cause any lifecycle method or re-rendering on change . So you need to explicitly 
  * change a state when any change to your custom made state . 
+ * 
+ * 4. Why we don't bind tick method ?
  * 
  * 
  */

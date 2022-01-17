@@ -1,0 +1,16 @@
+* What is Bundling ?
+Ans : Bundling is a process of getting all the imported files and using libraries all at one place to work together 
+and load the webpage at once . But once you use many large third - party libraries from npm
+then your bundle will also become heavy , and so affect your web app's performance . 
+This problem is solved by Code-Splitting method , which is already supported in Bundlers like Webpack
+
+* What is Code-Splitting in Bundling ?
+Ans : This is a method by which your code , instead of getting packed in one single bundle , it gets into multiple different 
+bundles , Code is put in bundles , hierarchy wise so that they run dynamically at Runtime . 
+Code-Splitting helps you 'lazy-load' means loading only those things which are currently needed . 
+Reducing the overall loading time . 
+
+****IMP : What is dynamic import ?
+Ans: As we know in a module , if we need other module somewhere then we do the imports thing at the top . 
+But in dynamic importing , we do this thing only when we need it : See here = https://reactjs.org/docs/code-splitting.html#:~:text=The%20best%20way%20to%20introduce%20code%2Dsplitting%20into%20your%20app%20is%20through%20the%20dynamic%20import()%20syntax.
+ 

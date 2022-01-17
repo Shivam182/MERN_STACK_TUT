@@ -45,5 +45,11 @@ In order to show any component to your website at any point of time , you need t
 main entry point of the app directly or indirectly [through other parent component] , this is called adding a 
 component to the DOM Tree . 
 
-* Do we need to use .bind() with some methods ?
-Ans : 
+* What are React Elements ? 
+Ans : Unlike browser DOM elements , React elements like div , btn , anyCustomComponent, etc . are plain 
+javaScript objects . React elements are immutable , and represent one frame in UI at any time .
+
+* How many root DOM Nodes in a Webapp ?
+Ans : In one web-app fully built with react will have single 'root' DOM Node , 
+If you are integrating React to an existing app You may have as many as isolated root DOM nodes 
+- To render a React Element to a DOM Node You need to pass the element to ReactDOM.render();
